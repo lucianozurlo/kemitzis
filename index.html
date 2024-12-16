@@ -1,14 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
     <title>Kemitzis Consulting</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="assets/js/theme-switcher.js"></script>
+
+    <!-- Favicon and Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest.webmanifest">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#2EA1F9">
+    <link rel="shortcut icon" href="assets/favicon/favicon.png">
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Vendor Styles -->
+    <link rel="stylesheet" media="screen" href="assets/vendor/boxicons/css/boxicons.min.css">
+    <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" media="screen" href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css">
+
+    <!-- Main Theme Styles + Bootstrap -->
+    <link rel="stylesheet" media="screen" href="assets/css/kc.css">
+    <link rel="stylesheet" media="screen" href="assets/css/fonts.css">
+    <link rel="stylesheet" media="screen" href="assets/css/custom.css">
+
+    <!-- Page loading scripts -->
+    <script>
+        (function () {
+            window.onload = function () {
+                const preloader = document.querySelector('.page-loading');
+                preloader.classList.remove('active');
+                setTimeout(function () {
+                    preloader.remove();
+                }, 1000);
+            };
+        })();
+    </script>
 </head>
+
 
 <body>
 
+    <div class="page-loading active">
+        <div class="page-loading-inner">
+            <div class="page-spinner"></div><span>Loading...</span>
+        </div>
+    </div>
+
+    <main class="page-wrapper">
+
+        <header class="header navbar navbar-expand-lg position-absolute navbar-sticky">
+            <div class="container px-3">
+                <a href="#" class="navbar-brand pe-3">
+                    <img src="assets/img/logo.jpg" width="92" alt="Kemitzis">
+                </a>
+                <div id="navbarNav" class="offcanvas offcanvas-end">
+                    <div class="offcanvas-header border-bottom">
+                        <h5 class="offcanvas-title">Menu</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a href="#services" class="nav-link scroll-link" onclick="closeNav()">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#clients" class="nav-link scroll-link" onclick="closeNav()">Clients</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#contact" class="nav-link scroll-link" onclick="closeNav()">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#about" class="nav-link scroll-link" onclick="closeNav()">About</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </header>
+
+        <section id="intro" class="position-relative d-flex align-items-center min-vh-100 bg-light mb-5 py-lg-5 pt-5">
+            <div class="container position-relative zindex-5 p-0">
+                <div class="row justify-content-md-start justify-content-center">
+                    <div
+                        class="col-md-8 col-sm-8 order-md-1 order-2 d-flex flex-column justify-content-between mt-4 pt-2 text-md-start text-center p-0">
+                        <div style="margin-bottom: 40px !important;">
+
+                            <div class="d-inline-flex align-items-center position-relative mb-3">
+                                <h4 class="mb-0">Understand where you are <span class="color-blue">today</span>, own
+                                    where you could be <span class="color-lightblue">tomorrow</span></h4>
+                            </div>
+
+                            <h1 class="display-1 alt">
+                                Your financial health,<br />on <span class="text-gradient-primary">auto-pilot</span>
+                            </h1>
+                            <div class="d-md-flex align-items-md-start">
+                                <p class="d-lg-block lead d-none mb-0">White-glove financial solutions to turn
+                                    data into decisions.</p>
+                            </div>
+                        </div>
+
+                        <div class="d-md-flex align-items-md-start">
+                            <a href="#" class="btn btn-lg btn-primary flex-shrink-0 me-md-4 mb-md-0 mb-sm-4 mb-3">
+                                Book a Call</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <a href="#top" class="btn-scroll-top" data-scroll>
+        <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+        <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+    </a>
+
+
+    <!-- Vendor Scripts -->
+    <script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
+    <script src="assets/vendor/@lottiefiles/lottie-player/dist/lottie-player.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
+    <script src="assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/shufflejs/dist/shuffle.min.js"></script>
+
+    <!-- Main Theme Script -->
+    <script src="assets/js/theme.min.js"></script>
 </body>
 
 </html>
