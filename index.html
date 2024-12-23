@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <title>Kemitzis Consulting</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="assets/js/theme-switcher.js"></script>
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" media="screen" href="assets/vendor/boxicons/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" media="screen" href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css">
+    <link rel="stylesheet" media="screen" href="assets/css/kc.css">
+    <link rel="stylesheet" media="screen" href="assets/css/fonts.css">
+    <link rel="stylesheet" media="screen" href="assets/css/custom.css">
+    <link rel="stylesheet" media="screen" href="assets/css/responsive.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/preloader.js"></script>
+</head>
+
+<body>
+
+    <div class="page-loading active">
+        <div class="page-loading-inner">
+            <img src="assets/img/favicon.png" alt="">
+            <div class="page-spinner"></div><span>Loading...</span>
+        </div>
+    </div>
+
+    <main class="page-wrapper">
+        <header class="header navbar navbar-expand-lg position-absolute navbar-dark navbar-sticky navbar-stuck">
+            <div class="container px-3">
+
+                <div id="menu">
+                    <div class="offcanvas-header border-bottom">
+                        <a href="javascript:void(0)" class="btn-close" onclick="closeNav()"></a>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a href="#services" class="nav-link scroll-link" onclick="closeNav()">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#clients" class="nav-link scroll-link" onclick="closeNav()">Clients</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#contact" class="nav-link scroll-link" onclick="closeNav()">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="about" class="nav-link" onclick="closeNav()">About</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="offcanvas-header border-top">
+                        <a href="#intro" class="nav-link scroll-link" onclick="closeNav()"><img
+                                src="assets/img/logo.png" alt=""></a>
+                    </div>
+                </div>
+                <button type="button" class="navbar-toggler" onclick="openNav()">
+                    <span class="navbar-toggler-icon"><img src="assets/img/menu.svg" alt=""></span>
+                </button>
+
+                <div id="navbarNav" class="offcanvas offcanvas-end">
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a href="#services" class="nav-link scroll-link">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#clients" class="nav-link scroll-link">Clients</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#contact" class="nav-link scroll-link">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="about" class="nav-link">About</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="logo-container">
+            <div class="navbar-brand p-0">
+                <a href="#intro"><img id="logo" src="assets/img/logo.png" width="92" alt="Kemitzis"></a>
+                </a>
+            </div>
+        </div>
+        <div class="video-container">
+            <video muted autoplay>
+                <source src="assets/kc.mp4" type="video/mp4">
+            </video>
+        </div>
+        <section id="intro" class="bg-white position-relative d-flex align-items-center min-vh-100 bg-light">
+            <div class="container position-relative zindex-5 p-0">
+                <div class="row justify-content-md-start justify-content-center">
+                    <div
+                        class="col-md-8 col-sm-8 order-md-1 order-2 d-flex flex-column justify-content-between mt-4 pt-2 text-md-start text-center p-0">
+                        <div class="mb-40">
+                            <div class="d-inline-flex align-items-center position-relative mb-3">
+                                <h4 class="mb-0">Understand where you are <span class="color-blue">today</span>, own
+                                    where you could be <span class="color-lightblue">tomorrow</span></h4>
+                            </div>
+
+                            <h1 class="display-1 alt">
+                                Your financial health,<br />on <span class="text-gradient-primary">auto-pilot</span>
+                            </h1>
+                            <div class="d-md-flex align-items-md-start">
+                                <p class="d-lg-block lead d-none mb-0">White-glove financial solutions to turn
+                                    data into decisions.</p>
+                            </div>
+                        </div>
+
+                        <div class="d-md-flex align-items-md-start">
+                            <a href="#" class="btn btn-lg flex-shrink-0 book">
+                                Book a Call</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="bg-white pt-5 pb-2 mt-3 mt-sm-4 mt-xl-5 text-center">
+
+            <div class="content">
+                <img src="assets/img/services.png" alt="">
+                <h2 class="h1pb-3 pb-lg-4">
+                    Understand where you are today</h2>
+                <p class="d-lg-block subtitle">
+                    Reporting to de-fog your past and current financial trends</p>
+                <a href="#" class="btn btn-lg flex-shrink-0 book">
+                    Book a Call</a>
+            </div>
+
+            <div class="container swiper-container">
+                <div class="pricing">
+                    <h4>$150</h4>
+                    <h6>per month</h6>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#process">More Details</a>
+                </div>
+                <img class="gp-img" src="assets/img/general-report.png">
+                <div class="swiper mySwiper">
+                    <div class="selector-container">
+                        <div class="selector">
+                            <div class="highlight"></div>
+                            <a href="#" class="go-to-slide" data-slide="1">Investor Update</a>
+                            <a href="#" class="go-to-slide" data-slide="2">General Reporting</a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide slide1">
+
+                            <div class="nested-swiper-container">
+                                <h3>Automate your financial storytelling, align with investors
+                                    <span class="color-blue-alt">effortlessly</span>
+                                </h3>
+                                <div class="swiper nestedSwiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <p class="sub">Cash & Burn Tracker</p>
+                                            <p class="last">Break down your total cash and monthly burn trends, and
+                                                assess your
+                                                runway with an integrated health gauge</p>
+                                            <div class="slide-box">
+                                                <img src="assets/img/services/investor-update.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <p class="sub">Revenue Tracker</p>
+                                            <p class="last">Visualize performance trends across multiple revenue
+                                                verticals</p>
+                                            <div class="slide-box">
+                                                <img src="assets/img/services/general-reporting.jpg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="arrows d-flex justify-content-center justify-content-lg-start mt-2 mt-lg-auto">
+                                    <button type="button"
+                                        class="btn btn-prev-sub btn-icon btn-sm swipper-button swipper-button-prev"
+                                        aria-label="Previous">
+                                        <i class="bx bx-chevron-left"></i>
+                                    </button>
+                                    <button type="button"
+                                        class="btn btn-next-sub btn-icon btn-sm swipper-button swipper-button-next"
+                                        aria-label="Next">
+                                        <i class="bx bx-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide slide2">
+                            <div class="slide-box">
+                                <ul class="slider-list">
+                                    <li>Master Financial Files (P&L, Balance Sheet, Cash Flow)</li>
+                                    <li>Burn Breakdown</li>
+                                    <li>Unit-Economics Analysis</li>
+                                    <li>Customer Cohort Analysis</li>
+                                </ul>
+                                <p class="gp">*Projects billed hourly</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tools" class="bg-grad pt-5 pb-2 mt-3 mt-sm-4 mt-xl-5 text-center">
+
+            <div class="content">
+                <img src="assets/img/tools.png" alt="">
+                <h2 class="h1pb-3 pb-lg-4 color-white">
+                    Own where you<br />could be tomorrow</h2>
+                <p class="d-lg-block subtitle color-white">
+                    Forward-looking tools to plan ahead with confidence</p>
+                <a href="#" class="btn btn-lg flex-shrink-0 book">
+                    Book a Call</a>
+            </div>
+            <div class="container swiper-container">
+                <img class="gp-img" src="assets/img/general-report.png">
+
+                <div class="swiper mySwiper">
+                    <div class="selector-container">
+                        <div class="selector">
+                            <div class="highlight"></div>
+                            <a href="#" class="go-to-slide" data-slide="1">Runway and Profitability</a>
+                            <a href="#" class="go-to-slide" data-slide="2">Use-of-funds Planning</a>
+                            <a href="#" class="go-to-slide" data-slide="3">General Reporting</a>
+                        </div>
+                    </div>
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide slide1">
+
+                            <div class="nested-swiper-container">
+                                <h3>Protect your <span class="color-violet">runway</span>, own a path to <span
+                                        class="color-blue-alt2">profitability</span>. All in one integrated model
+                                </h3>
+                                <div class="swiper nestedSwiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <p class="sub">Sales Forecasting</p>
+                                            <p class="last">Yearly sales outlook across bear, base, and
+                                                bull scenarios</p>
+                                            <div class="slide-box">
+                                                <img src="assets/img/tools/runway-and-profitability1.jpg" alt="">
+                                            </div>
+                                            <div class="extra">
+                                                <p>*Projects billed hourly</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <p class="sub">Runway & Fundraising Needs</p>
+                                            <p>Gauge runway implications between forecast & current conditions</p>
+                                            <p class="last">Ground your funding needs with a bottom-up, calculated
+                                                approach on the
+                                                capital needed to sustain your business outlook</p>
+                                            <div class="slide-box">
+                                                <img src="assets/img/tools/runway-and-profitability2.jpg" alt=""
+                                                    style="max-height: 387px;">
+                                            </div>
+                                            <div class="extra">
+                                                <p>*Projects billed hourly</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <p class="sub">P&L & Cash Flow Outlook</p>
+                                            <p class="last">Internalize your business forecast with
+                                                high-level, automated visuals on
+                                                profitability and cash flow</p>
+                                            <div class="slide-box">
+                                                <img src="assets/img/tools/runway-and-profitability3.jpg" alt="">
+                                            </div>
+                                            <div class="extra">
+                                                <p>*Projects billed hourly</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="arrows d-flex justify-content-center justify-content-lg-start mt-2 mt-lg-auto">
+                                    <button type="button"
+                                        class="btn btn-prev-sub btn-icon btn-sm swipper-button swipper-button-prev"
+                                        aria-label="Previous">
+                                        <i class="bx bx-chevron-left"></i>
+                                    </button>
+                                    <button type="button"
+                                        class="btn btn-next-sub btn-icon btn-sm swipper-button swipper-button-next"
+                                        aria-label="Next">
+                                        <i class="bx bx-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide slide2">
+                            <h3>Bring your <span class="color-blue-alt2">spending strategy </span>to life
+                            </h3>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <p class="last">Seamlessly visualize your spending timeline, allocation
+                                        breakdown,
+                                        and spend roadmap to align internally and externally on your use-of-funds
+                                        plan
+                                    </p>
+                                    <div class="slide-box">
+                                        <img src="assets/img/tools/use-of-funds-planning.jpg" alt="">
+                                    </div>
+                                    <div class="extra">
+                                        <p>*Projects billed hourly</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide slide3">
+                            <div class="slide-box">
+                                <ul class="slider-list">
+                                    <li>Sustainable Compensation Structuring</li>
+                                    <li>Business Model Viability Testing</li>
+                                    <li>Ad-hoc Financial Preparations for Investors</li>
+                                    <li>Recurring Actual vs Plan Variance Analyses</li>
+                                </ul>
+                                <p class="gp">*Projects billed hourly</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="clients" class="bg-white pt-5 pb-2 text-center">
+
+            <div class="content">
+                <h3>Our Clients</h3>
+            </div>
+            <div class="container">
+
+                <div class="raised">
+                    <h4>Raised From</h4>
+                    <ul>
+                        <li><img src="assets/img/clients/raised/rebel.png" alt="" style="max-width: 70px"></li>
+                        <li><img src="assets/img/clients/raised/y.png" alt="" style="max-width: 42px;"></li>
+                        <li><img src="assets/img/clients/raised/defy.png" alt="" style="max-width: 70px"></li>
+                        <li><img src="assets/img/clients/raised/bam.png" alt="" style="max-height: 20px;"></li>
+                        <li><img src="assets/img/clients/raised/lux.png" alt="" style="max-width: 58px;"></li>
+                        <li><img src="assets/img/clients/raised/10vc.png" alt="" style="max-width: 65px;"></li>
+                        <li><img src="assets/img/clients/raised/sevensevensix.png" alt="" style="max-width: 60px;">
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="industries">
+                    <h4>Industries</h4>
+                    <ul>
+                        <li>
+                            <img src="assets/img/clients/industries/hospitality.svg" alt="">
+                            <p>Hospitality</p>
+                        </li>
+                        <li>
+                            <img src="assets/img/clients/industries/law.svg" alt="">
+                            <p>Law</p>
+                        </li>
+                        <li>
+                            <img src="assets/img/clients/industries/fintech.svg" alt="">
+                            <p>Fintech</p>
+                        </li>
+                        <li>
+                            <img src="assets/img/clients/industries/real-estate.svg" alt="">
+                            <p>Real Estate</p>
+                        </li>
+                        <li>
+                            <img src="assets/img/clients/industries/biotech.svg" alt="">
+                            <p>Biotech</p>
+                        </li>
+                        <li>
+                            <img src="assets/img/clients/industries/healthcare.svg" alt="">
+                            <p>Healthcare</p>
+                        </li>
+                        <li>
+                            <img src="assets/img/clients/industries/f&b.svg" alt="">
+                            <p>Food & Bev.</p>
+                        </li>
+                        <li>
+                            <img src="assets/img/clients/industries/others.svg" alt="">
+                            <p>Others</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="size">
+                    <h4>Size</h4>
+                    <div class="sphere"></div>
+                    <ul>
+                        <li>Pre-Seed</li>
+                        <li>Seed</li>
+                        <li>Series A</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="bg-grad pt-5 pb-1 text-center">
+            <div class="content">
+                <h3 class="color-white">Contact Me</h3>
+                <p class="d-lg-block subtitle color-white">
+                    Put your finances on auto-pilot. Lets align on integrating our current financial toolkit, and/or
+                    building out models specific to your business</p>
+                <div class="buttons">
+                    <a href="#" class="btn btn-lg flex-shrink-0 book">
+                        Book a Call</a>
+                    <a href="#" class="btn btn-lg flex-shrink-0 book">
+                        Email</a>
+                </div>
+            </div>
+            <div class="logo-end">
+                <img src="assets/img/logo-w.png" alt="">
+            </div>
+        </section>
+
+
+
+
+
+        <div id="process" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <h3>The Process</h3>
+                    <div class="boxes">
+
+                        <div class="box">
+                            <div class="top">
+                                <p>Initial Setup</p>
+                                <p>(weeks 1-2)</p>
+                                <div class="num"><span>1</span></div>
+                            </div>
+                            <div class="slide-box">
+                                <ul class="slider-list">
+                                    <li>Connect accounts for data retrieval (Quickbooks, Stripe, Bank, etc.)</li>
+                                    <li>Upload and organize historical financial information</li>
+                                    <li>Generate current investor update model for review</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="top">
+                                <p>Maintenance</p>
+                                <p>(monthly)</p>
+                                <div class="num"><span>2</span></div>
+                            </div>
+                            <div class="slide-box">
+                                <ul class="slider-list">
+                                    <li>Upload and integrate monthly financial data</li>
+                                    <li>Finalize investor update model within first 7 days of each month</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="btn-container">
+                        <a href="#" class="btn btn-lg flex-shrink-0 book long">
+                            Book a Call</a>
+                    </div>
+                </div>
+
+                <!-- <div style="/* Line 1 */
+
+                        /* position: absolute;
+                        width: 41px;
+                        height: 0px;
+                        left: calc(50% - 41px/2 + 1.5px);
+                        top: 337px; */
+                        
+                        "> -->
+
+
+
+            </div>
+        </div>
+        </div>
+
+        <script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
+        <script src="assets/vendor/@lottiefiles/lottie-player/dist/lottie-player.js"></script>
+        <script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
+        <script src="assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
+        <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/vendor/shufflejs/dist/shuffle.min.js"></script>
+        <script src="assets/js/kc.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
+        <script src="assets/js/smooth-scroll.js"></script>
+        <script src="assets/js/swiper.js"></script>
+    </main>
+</body>
+
+</html>
