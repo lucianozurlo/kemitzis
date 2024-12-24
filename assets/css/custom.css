@@ -277,14 +277,16 @@ h4.alt {
     color: #4b3ba8 !important;
 }
 
-a.btn {
+.btn {
     font-size: 16px;
     font-family: var(--kc-body-font-family);
     font-weight: 400;
     cursor: pointer !important;
+    border: 0.5px solid #fff !important;
 }
 
 .btn.book {
+    position: relative;
     color: #fff;
     font-weight: 400;
     cursor: pointer !important;
@@ -295,22 +297,49 @@ a.btn {
     height: 40px !important;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
         linear-gradient(95.75deg, #8427D2 0%, #4061E2 50%, #2EA1F9 100%);
-    box-shadow: 0 0 20px rgba(0, 38, 190, 0.3);
+    box-shadow: 0 0 20px rgba(0, 38, 190, 0.3) !important;
     border-radius: 50px;
     margin: 0 0 80px;
     flex: none;
     flex-grow: 0;
+    z-index: 1;
+    transition: all .25s ease-in-out;
 }
 
-.btn.book:hover {
-    box-shadow: 0 0 20px rgba(0, 38, 190, 0.3);
-    background-size: 100%;
-    filter: saturate(1.1) brightness(1);
+.btn.book::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 50px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+        linear-gradient(95.75deg, #8427D2 0%, #4061E2 50%, #2EA1F9 100%);
+    box-shadow: 0 0 20px rgba(0, 38, 190, 0.3) !important;
+
+    z-index: -1;
+    transition: all .25s ease-in-out;
+    opacity: 0;
+}
+
+.btn.book:hover::before {
+    opacity: 1;
+}
+
+.swiper-button-disabled {
+    pointer-events: none;
 }
 
 .btn.book.long {
     width: 272px !important;
 }
+
+.bg-grad .grad a:hover {
+    color: #fff !important;
+}
+
+
 
 /* INTRO */
 /* #intro {
@@ -533,6 +562,11 @@ a.btn {
     pointer-events: unset;
 }
 
+#services .swiper-container .selector-container .selector .go-to-slide:hover,
+#tools .swiper-container .selector-container .selector .go-to-slide:hover {
+    font-weight: 700;
+}
+
 #services .swiper-container .selector-container .selector .go-to-slide.active,
 #tools .swiper-container .selector-container .selector .go-to-slide.active {
     color: #fff;
@@ -607,11 +641,12 @@ a.btn {
     left: 44px;
     top: 115px;
     border-radius: 50px;
-    font-family: 'Inter';
+    font-family: 'Satoshi';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 14px;
     line-height: 130%;
+    text-align: center;
     text-decoration-line: underline !important;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
         linear-gradient(95.75deg, #8427D2 0%, #4061E2 50%, #2EA1F9 100%);
@@ -619,6 +654,8 @@ a.btn {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
+    transform: scale(1);
+    transition: all .3s ease-in-out;
 }
 
 #services .pricing a::after {
@@ -630,6 +667,11 @@ a.btn {
     height: 1px;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
         linear-gradient(95.75deg, #8427D2 0%, #4061E2 50%, #2EA1F9 100%);
+}
+
+#services .pricing a:hover {
+    font-weight: 700;
+    transform: scale(1.025);
 }
 
 .nested-swiper-container {
@@ -664,6 +706,10 @@ a.btn {
     margin-top: -10px !important;
     flex: none;
     flex-grow: 0;
+}
+
+.arrows .btn {
+    margin: 20px;
 }
 
 #tools .nested-swiper-container .arrows {
