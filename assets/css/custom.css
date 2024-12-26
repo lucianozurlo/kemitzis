@@ -1476,6 +1476,7 @@ h4.alt {
 }
 
 #about .side-column img.about {
+    z-index: 11;
     border-radius: 50%;
     filter: drop-shadow(0px 37.4957px 14.5391px rgba(0, 0, 0, 0.01)) drop-shadow(0px 20.6609px 12.2435px rgba(0, 0, 0, 0.05)) drop-shadow(0px 9.18261px 9.18261px rgba(0, 0, 0, 0.09)) drop-shadow(0px 2.29565px 5.35652px rgba(0, 0, 0, 0.1));
 }
