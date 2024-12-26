@@ -167,11 +167,93 @@ header #navbarNav li a {
     transition: all 0.3s;
 }
 
-header #navbarNav li a:hover,
-header #navbarNav li a:active {
+header #navbarNav li a:hover {
     color: #4061E2;
     text-shadow: 0 0 30px #4061E2ee;
 }
+
+
+
+
+
+/* 
+header .nav-link {
+    height: 35px;
+    border-radius: 50px;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .nav-link.active {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(95.75deg, #8427D2 0%, #4061E2 50%, #2EA1F9 100%);
+    color: #fff !important;
+    pointer-events: none;
+} */
+
+
+/* Asegura que el contenedor de la barra de fondo esté posicionado correctamente */
+header .offcanvas-body {
+    position: relative;
+}
+
+/* Estilos para la barra de fondo animada */
+.nav-highlight {
+    position: absolute;
+    bottom: 0;
+    height: 35px !important;
+    left: 0;
+    width: 0;
+    background: linear-gradient(95.75deg, #8427D2 0%, #4061E2 50%, #2EA1F9 100%);
+    border-radius: 50px;
+    transition: all 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 0;
+    /* Debajo de los enlaces */
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-10px);
+}
+
+/* Clase para ocultar la barra de fondo animada */
+.nav-highlight.hide {
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+    /* Asegura que no ocupe espacio */
+}
+
+/* Asegura que los enlaces de navegación estén por encima de la barra de fondo */
+header .nav-link {
+    position: relative;
+    z-index: 1;
+    /* Por encima de la barra de fondo */
+    padding-bottom: 5px;
+    /* Espacio para la barra de fondo */
+    color: #414141;
+    /* Color por defecto */
+    text-decoration: none;
+    /* Elimina subrayado */
+    transition: color 0.3s ease;
+}
+
+/* Estilos para los enlaces activos */
+header .nav-link.active {
+    color: #fff !important;
+    /* Color del texto cuando está activo */
+    /* Remueve el fondo y pointer-events */
+    background: none !important;
+    pointer-events: auto !important;
+}
+
+/* Opcional: Estilos de hover para mejorar la interacción */
+header .nav-link:hover {
+    color: #4061E2;
+    text-shadow: 0 0 30px #4061E2ee;
+}
+
+
+
 
 .navbar-brand {
     padding: 0;
@@ -374,8 +456,7 @@ h4.alt {
     color: var(--kc-gray);
 }
 
-#services,
-#tools {
+#services {
     padding-top: 90px !important;
     width: 100vw;
     max-width: unset;

@@ -125,3 +125,11 @@
     }
 
 }
+
+
+@media (max-width: 768px) {
+    .nav-highlight {
+        height: 30px !important;
+        border-radius: 40px;
+    }
+}
