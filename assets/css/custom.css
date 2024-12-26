@@ -1069,6 +1069,20 @@ h4.alt {
     background-repeat: no-repeat;
 }
 
+#process .modal-content .line-container {
+    position: absolute;
+    width: calc(100% - 100px);
+    height: calc(100% - 90px);
+    display: flex;
+    justify-content: center;
+}
+
+#process .modal-content .line-content {
+    position: absolute;
+    top: 337px;
+    margin-left: 6px;
+}
+
 #process h3 {
     width: 320px;
     height: 65px;
