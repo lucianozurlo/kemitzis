@@ -193,12 +193,10 @@ header .nav-link.active {
 } */
 
 
-/* Asegura que el contenedor de la barra de fondo esté posicionado correctamente */
 header .offcanvas-body {
     position: relative;
 }
 
-/* Estilos para la barra de fondo animada */
 .nav-highlight {
     position: absolute;
     bottom: 0;
@@ -209,51 +207,50 @@ header .offcanvas-body {
     border-radius: 50px;
     transition: all 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
     z-index: 0;
-    /* Debajo de los enlaces */
     opacity: 1;
     visibility: visible;
     transform: translateY(-10px);
 }
 
-/* Clase para ocultar la barra de fondo animada */
 .nav-highlight.hide {
     opacity: 0;
     visibility: hidden;
     width: 0;
-    /* Asegura que no ocupe espacio */
 }
 
-/* Asegura que los enlaces de navegación estén por encima de la barra de fondo */
 header .nav-link {
     position: relative;
     z-index: 1;
-    /* Por encima de la barra de fondo */
     padding-bottom: 5px;
-    /* Espacio para la barra de fondo */
     color: #414141;
-    /* Color por defecto */
     text-decoration: none;
-    /* Elimina subrayado */
     transition: color 0.3s ease;
 }
 
-/* Estilos para los enlaces activos */
 header .nav-link.active {
     color: #fff !important;
-    /* Color del texto cuando está activo */
-    /* Remueve el fondo y pointer-events */
     background: none !important;
     pointer-events: auto !important;
 }
 
-/* Opcional: Estilos de hover para mejorar la interacción */
 header .nav-link:hover {
     color: #4061E2;
+    width: 100%;
+    height: 100%;
+    font-family: 'Satoshi';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    leading-trim: both;
+    text-edge: cap;
+    background: linear-gradient(95.75deg, #2EA1F9 0%, #4061E2 50%, #0026BE 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
     text-shadow: 0 0 30px #4061E2ee;
 }
-
-
-
 
 .navbar-brand {
     padding: 0;
