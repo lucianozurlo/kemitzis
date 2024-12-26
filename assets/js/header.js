@@ -38,6 +38,9 @@ document.addEventListener ('DOMContentLoaded', function () {
         if (activeLink) {
           activeLink.classList.add ('active');
           moveHighlight (activeLink);
+          highlight.classList.remove ('hide'); // Remover 'hide' cuando hay un enlace activo
+        } else {
+          highlight.classList.add ('hide'); // Agregar 'hide' si no hay enlace activo
         }
       }
     });
@@ -54,8 +57,8 @@ document.addEventListener ('DOMContentLoaded', function () {
     const containerRect = activeLink.parentElement.parentElement.getBoundingClientRect ();
 
     // Calcular la posición relativa del enlace dentro del contenedor
-    const left = activeLink.offsetLeft;
-    const width = activeLink.offsetWidth;
+    const left = linkRect.left - containerRect.left;
+    const width = linkRect.width;
 
     // Actualizar el estilo de la barra de fondo
     highlight.style.left = `${left}px`;
@@ -66,6 +69,9 @@ document.addEventListener ('DOMContentLoaded', function () {
   const initialActiveLink = document.querySelector ('header .nav-link.active');
   if (initialActiveLink) {
     moveHighlight (initialActiveLink);
+    highlight.classList.remove ('hide');
+  } else {
+    highlight.classList.add ('hide');
   }
 
   // Reposicionar la barra de fondo al redimensionar la ventana
@@ -73,6 +79,9 @@ document.addEventListener ('DOMContentLoaded', function () {
     const activeLink = document.querySelector ('header .nav-link.active');
     if (activeLink) {
       moveHighlight (activeLink);
+      highlight.classList.remove ('hide');
+    } else {
+      highlight.classList.add ('hide');
     }
   });
 });
