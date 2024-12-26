@@ -128,8 +128,31 @@
 
 
 @media (max-width: 768px) {
+
+
+
+
     .nav-highlight {
         height: 30px !important;
         border-radius: 40px;
+    }
+
+
+
+
+
+
+
+
+    main .video-container {
+        display: none !important;
+    }
+
+    #intro {
+        background: red !important;
+        width: 100vw;
+        height: 100vh;
+        min-width: 100vw;
+        min-height: 100vh;
     }
 }
