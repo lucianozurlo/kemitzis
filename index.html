@@ -29,10 +29,17 @@
     <main class="page-wrapper">
         <header class="header navbar navbar-expand-lg position-absolute navbar-dark navbar-sticky navbar-stuck">
             <div class="container px-3">
+                <button type="button" class="navbar-toggler" onclick="openNav()">
+                    <span class="navbar-toggler-icon">
+                        <img src="assets/img/menu.svg" alt="">
+                    </span>
+                </button>
 
-                <!-- <div id="menu">
-                    <div class="offcanvas-header border-bottom">
-                        <a href="javascript:void(0)" class="btn-close" onclick="closeNav()"></a>
+                <div id="navbarNav" class="offcanvas offcanvas-end scroll-animate">
+                    <div class="offcanvas-header mob-ok">
+                        <button type="button" class="btn-close" onclick="closeNav()">
+                            <img src="assets/img/close.svg" alt="">
+                        </button>
                     </div>
                     <div class="offcanvas-body">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -48,35 +55,11 @@
                             <li class="nav-item">
                                 <a href="about" class="nav-link" onclick="closeNav()">About</a>
                             </li>
+                            <span class="nav-highlight mob-no"></span>
                         </ul>
                     </div>
-                    <div class="offcanvas-header border-top">
-                        <a href="#intro" class="nav-link scroll-link" onclick="closeNav()"><img
-                                src="assets/img/logo.png" alt=""></a>
-                    </div>
-                </div> -->
-                <button type="button" class="navbar-toggler" onclick="openNav()">
-                    <span class="navbar-toggler-icon">
-                        <img src="assets/img/menu.svg" alt=""></span>
-                </button>
-
-                <div id="navbarNav" class="offcanvas offcanvas-end scroll-animate">
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a href="#services" class="nav-link scroll-link">Services</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#clients" class="nav-link scroll-link">Clients</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#contact" class="nav-link scroll-link">Contact</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="about" class="nav-link">About</a>
-                            </li>
-                            <span class="nav-highlight"></span>
-                        </ul>
+                    <div class="offcanvas-footer mob-ok">
+                        <img src="assets/img/menu-img.png" alt="">
                     </div>
                 </div>
             </div>
@@ -92,61 +75,66 @@
                 <source src="assets/kc.mp4" type="video/mp4">
             </video>
         </div>
+
+        <!-- ==================== INTRO ==================== -->
         <section id="intro" class="bg-white position-relative d-flex align-items-center min-vh-100 bg-light">
             <div class="container position-relative zindex-5 p-0">
-                <div class="row justify-content-md-start justify-content-center">
+                <div class="row justify-content-md-start justify-content-center m-lr-0">
                     <div
-                        class="col-md-8 col-sm-8 order-md-1 order-2 d-flex flex-column justify-content-between mt-4 pt-2 text-md-start text-center p-0">
-                        <div class="mb-40">
-                            <div class="d-inline-flex align-items-center position-relative mb-3">
-                                <h4 class="mb-0 scroll-animate">Understand where you are <span
-                                        class="color-blue">today</span>, own
+                        class="col-md-8 col-sm-8 order-md-1 order-2 d-flex flex-column justify-content-between gap-30 text-md-start text-center p-0">
+                        <div class="content">
+                            <div class="d-inline-flex align-items-center position-relative mb-3 scroll-animate">
+                                <h4 class="mb-0">Understand where you are <span class="color-blue">today</span>, own
                                     where you could be <span class="color-lightblue">tomorrow</span></h4>
                             </div>
 
                             <h1 class="display-1 alt scroll-animate">
                                 Your financial health,<br />on <span class="text-gradient-primary">auto-pilot</span>
                             </h1>
-                            <div class="d-md-flex align-items-md-start">
-                                <p class="d-lg-block lead d-none mb-0 scroll-animate">White-glove financial solutions to
-                                    turn data into decisions.</p>
+                            <div class="d-md-flex align-items-md-start scroll-animate">
+                                <p class="d-lg-block lead mb-0">
+                                    White-glove financial solutions to turn data into decisions.
+                                </p>
                             </div>
                         </div>
 
-                        <div class="d-md-flex align-items-md-start">
-                            <a href="https://calendly.com/kemitzisconsulting" target="_blank"
-                                class="btn btn-lg flex-shrink-0 book scroll-animate">
-                                Book a Call</a>
+                        <div class="d-md-flex align-items-md-start scroll-animate">
+                            <a href="https://calendly.com/kemitzisconsulting/15min?back=1&month=2024-12" target="_blank"
+                                class="btn btn-lg flex-shrink-0 book mob">Book a Call</a>
                         </div>
                     </div>
-
                 </div>
             </div>
+            <div class="mob-intro-bg-blur"></div>
         </section>
 
+        <!-- ==================== SERVICES ==================== -->
         <section id="services" class="bg-white pt-5 pb-2 mt-3 mt-sm-4 mt-xl-5 text-center">
 
             <div class="content">
                 <img src="assets/img/services.png" alt="" class="scroll-animate">
-                <h2 class="h1pb-3 pb-lg-4 scroll-animate">
-                    Understand where you are today</h2>
+                <!-- <img src="assets/img/services2.png" alt="" class="scroll-animate mob-ok"
+                    style="width: 100px; height: 117;"> -->
+                <h2 class="h1pb-3 pb-lg-4 scroll-animate">Understand where you are today</h2>
                 <p class="d-lg-block subtitle scroll-animate">
-                    Reporting to de-fog your past and current financial trends</p>
-                <a href="https://calendly.com/kemitzisconsulting" target="_blank"
-                    class="btn btn-lg flex-shrink-0 book scroll-animate">
-                    Book a Call</a>
+                    Reporting to de-fog your past and current financial trends
+                </p>
+                <a href="https://calendly.com/kemitzisconsulting/15min?back=1&month=2024-12" target="_blank"
+                    class="btn btn-lg flex-shrink-0 book mob scroll-animate">Book a Call</a>
             </div>
 
             <div class="container swiper-container scroll-animate">
-                <div class="pricing scroll-animate">
+                <div class="pricing scroll-animate mob-no">
                     <h4>$150</h4>
                     <h6>per month</h6>
                     <a href="#" data-bs-toggle="modal" data-bs-target="#process">More Details</a>
                 </div>
-                <img class="gp-img" src="assets/img/general-report.png">
-                <div class="swiper mySwiper scroll-animate">
+                <img class="gp-img mob-no" src="assets/img/general-report.png">
+
+                <!-- DESKTOP -->
+                <div class="swiper mySwiper mob-no scroll-animate">
                     <div class="selector-container">
-                        <div class="selector scroll-animate">
+                        <div class="selector">
                             <div class="highlight"></div>
                             <a href="#" class="go-to-slide" data-slide="1">Investor Update</a>
                             <a href="#" class="go-to-slide" data-slide="2">General Reporting</a>
@@ -156,17 +144,17 @@
                     <div class="swiper-wrapper">
 
                         <div class="swiper-slide slide1">
-
                             <div class="nested-swiper-container">
-                                <h3>Automate your financial storytelling, align with investors
+                                <h3 class="scroll-animate">Automate your financial storytelling, align with investors
                                     <span class="color-blue-alt">effortlessly</span>
                                 </h3>
-                                <div class="swiper nestedSwiper">
+                                <div class="swiper nestedSwiper scroll-animate">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
                                             <p class="sub">Cash & Burn Tracker</p>
                                             <p class="last">Break down your total cash and monthly burn
-                                                trends, and assess your runway with an integrated health gauge</p>
+                                                trends, and assess your runway with an integrated health gauge
+                                            </p>
                                             <div class="slide-box">
                                                 <img src="assets/img/services/investor-update.jpg" alt="">
                                             </div>
@@ -174,7 +162,8 @@
                                         <div class="swiper-slide">
                                             <p class="sub">Revenue Tracker</p>
                                             <p class="last">Visualize performance trends across multiple
-                                                revenue verticals</p>
+                                                revenue verticals
+                                            </p>
                                             <div class="slide-box">
                                                 <img src="assets/img/services/general-reporting.jpg" alt="">
                                             </div>
@@ -199,39 +188,115 @@
                         </div>
 
                         <div class="swiper-slide slide2">
+                            <h3 class="mb-30 scroll-animate">Tailored reporting to <span
+                                    class="color-blue-alt">uncloud</span> current business trends</h3>
                             <div class="slide-box">
-                                <ul class="slider-list">
+                                <ul class="slider-list scroll-animate">
                                     <li>Master Financial Files (P&L, Balance Sheet, Cash Flow)</li>
                                     <li>Burn Breakdown</li>
                                     <li>Unit-Economics Analysis</li>
                                     <li>Customer Cohort Analysis</li>
                                 </ul>
+                            </div>
+                            <div class="extra mb-10">
                                 <p class="gp">*Projects billed hourly</p>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- END DESKTOP -->
+
+                <!-- MOBILE -->
+                <div id="swiperServicesMob" class="swiper mySwiperMob mob-ok scroll-animate">
+
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="card-top">
+                                <h4>Investor Update</h4>
+                            </div>
+                            <div class="card-cont">
+                                <h3 class="scroll-animate">
+                                    Automate your financial storytelling, align with investors
+                                    <span class="text-gradient-primary">effortlessly</span>
+                                </h3>
+                                <div class="text scroll-animate">
+                                    <div class="subtext">
+                                        <h5>Cash & Burn Tracker</h5>
+                                        <p>Break down your total cash and monthly burn trends, and assess your runway
+                                            with an integrated health gauge</p>
+                                    </div>
+                                    <div class="subtext">
+                                        <h5>Revenue Tracker</h5>
+                                        <p>Visualize performance<br />trends across multiple<br />revenue verticals</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pricing scroll-animate mob-ok scroll-animate">
+                                <div class="white-text">
+                                    <h4>$150</h4>
+                                    <h6>per month</h6>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#process">More Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="card-top">
+                                <h4>Investor Update</h4>
+                            </div>
+                            <div class="card-cont">
+                                <h3>
+                                    Tailored reporting to <span class="text-gradient-primary">uncloud</span> current
+                                    business trends
+                                </h3>
+                                <div class="text">
+                                    <div class="subtext">
+                                        <ul>
+                                            <li>Master Financial Files (P&L, Balance Sheet, Cash Flow)</li>
+                                            <li>Burn Breakdown</li>
+                                            <li>Unit-Economics Analysis</li>
+                                            <li>Customer Cohort Analysis</li>
+                                        </ul>
+                                        <div class="extra">
+                                            <p class="gp">*Projects billed hourly</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- END MOBILE -->
             </div>
         </section>
 
+        <!-- ==================== TOOLS ==================== -->
         <section id="tools" class="bg-grad pt-5 pb-2 mt-3 mt-sm-4 mt-xl-5 text-center">
-
             <div class="content grad">
                 <img src="assets/img/tools.png" alt="" class="scroll-animate">
+                <!-- <img src="assets/img/tools2.png" alt="" class="scroll-animate mob-ok"
+                    style="width: 100px; height: 134;"> -->
                 <h2 class="h1pb-3 pb-lg-4 color-white scroll-animate">
-                    Own where you<br />could be tomorrow</h2>
+                    Own where you<br />could be tomorrow
+                </h2>
                 <p class="d-lg-block subtitle color-white scroll-animate">
-                    Forward-looking tools to plan ahead with confidence</p>
-                <a href="https://calendly.com/kemitzisconsulting" target="_blank"
+                    Forward-looking tools to plan ahead with confidence
+                </p>
+                <a href="https://calendly.com/kemitzisconsulting/15min?back=1&month=2024-12" target="_blank"
                     class="btn btn-lg flex-shrink-0 book scroll-animate">
-                    Book a Call</a>
+                    Book a Call
+                </a>
             </div>
-            <div class="container swiper-container scroll-animate">
+            <div class="container swiper-container">
                 <img class="gp-img" src="assets/img/general-report.png">
 
-                <div class="swiper mySwiper scroll-animate">
-                    <div class="selector-container">
-                        <div class="selector scroll-animate">
+                <!-- DESKTOP -->
+                <div class="swiper mySwiper mob-no">
+                    <div class="selector-container scroll-animate">
+                        <div class="selector">
                             <div class="highlight"></div>
                             <a href="#" class="go-to-slide" data-slide="1">Runway and Profitability</a>
                             <a href="#" class="go-to-slide" data-slide="2">Use-of-funds Planning</a>
@@ -241,48 +306,53 @@
                     <div class="swiper-wrapper">
 
                         <div class="swiper-slide slide1">
-
                             <div class="nested-swiper-container">
-                                <h3>Protect your <span class="color-violet">runway</span>, own a path to <span
-                                        class="color-blue-alt2">profitability</span>. All in one integrated model
+                                <h3 class="scroll-animate">
+                                    Protect your <span class="color-violet">runway</span>, own a path to
+                                    <span class="color-blue-alt2">profitability</span>. All in one integrated model
                                 </h3>
-                                <div class="swiper nestedSwiper">
+                                <div class="swiper nestedSwiper scroll-animate">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
                                             <p class="sub">Sales Forecasting</p>
                                             <p class="last">Yearly sales outlook across bear, base, and
-                                                bull scenarios</p>
+                                                bull scenarios
+                                            </p>
                                             <div class="slide-box">
                                                 <img src="assets/img/tools/runway-and-profitability1.jpg" alt="">
                                             </div>
                                             <div class="extra">
-                                                <p>*Projects billed hourly</p>
+                                                <p class="gp">*Projects billed hourly</p>
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <p class="sub">Runway & Fundraising Needs</p>
-                                            <p>Gauge runway implications between forecast & current conditions</p>
-                                            <p class="last">Ground your funding needs with a bottom-up, calculated
-                                                approach on the
-                                                capital needed to sustain your business outlook</p>
+                                            <p>
+                                                Gauge runway implications between forecast & current conditions
+                                            </p>
+                                            <p class="last">
+                                                Ground your funding needs with a bottom-up, calculated
+                                                approach on the capital needed to sustain your business outlook
+                                            </p>
                                             <div class="slide-box">
                                                 <img src="assets/img/tools/runway-and-profitability2.jpg" alt=""
                                                     style="max-height: 387px;">
                                             </div>
                                             <div class="extra">
-                                                <p>*Projects billed hourly</p>
+                                                <p class="gp">*Projects billed hourly</p>
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <p class="sub">P&L & Cash Flow Outlook</p>
-                                            <p class="last">Internalize your business forecast with
-                                                high-level, automated visuals on
-                                                profitability and cash flow</p>
+                                            <p class="last">
+                                                Internalize your business forecast with high-level, automated visuals on
+                                                profitability and cash flow
+                                            </p>
                                             <div class="slide-box">
                                                 <img src="assets/img/tools/runway-and-profitability3.jpg" alt="">
                                             </div>
                                             <div class="extra">
-                                                <p>*Projects billed hourly</p>
+                                                <p class="gp">*Projects billed hourly</p>
                                             </div>
                                         </div>
                                     </div>
@@ -305,103 +375,245 @@
                         </div>
 
                         <div class="swiper-slide slide2">
-                            <h3>Bring your <span class="color-blue-alt2">spending strategy </span>to life
+                            <h3 class="scroll-animate">Bring your <span class="color-blue-alt2">spending strategy
+                                </span>to life
                             </h3>
-                            <div class="swiper-wrapper">
+                            <div class="swiper-wrapper scroll-animate">
                                 <div class="swiper-slide">
-                                    <p class="last">Seamlessly visualize your spending timeline, allocation
-                                        breakdown,
-                                        and spend roadmap to align internally and externally on your use-of-funds
-                                        plan
+                                    <p class="last">
+                                        Seamlessly visualize your spending timeline, allocation breakdown,
+                                        and spend roadmap to align internally and externally on your use-of-funds plan
                                     </p>
                                     <div class="slide-box">
                                         <img src="assets/img/tools/use-of-funds-planning.jpg" alt="">
                                     </div>
-                                    <div class="extra">
-                                        <p>*Projects billed hourly</p>
+                                    <div class="extra mb-5">
+                                        <p class="gp">*Projects billed hourly</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="swiper-slide slide3">
+                            <h3 class="mb-30 scroll-animate">Tailored reporting to <span
+                                    class="color-blue-alt">build</span> a sustainable tomorrow</h3>
                             <div class="slide-box">
-                                <ul class="slider-list">
+                                <ul class="slider-list scroll-animate">
                                     <li>Sustainable Compensation Structuring</li>
                                     <li>Business Model Viability Testing</li>
                                     <li>Ad-hoc Financial Preparations for Investors</li>
                                     <li>Recurring Actual vs Plan Variance Analyses</li>
                                 </ul>
+                            </div>
+                            <div class="extra mb-5">
                                 <p class="gp">*Projects billed hourly</p>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- END DESKTOP -->
 
+                <!-- MOBILE -->
+                <div id="swiperToolsMob" class="swiper mySwiperMob mob-ok scroll-animate">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="card-top">
+                                <h4>Runway and Profitability</h4>
+                            </div>
+                            <div class="card-cont">
+                                <h3 class="scroll-animate">
+                                    Protect your <span class="text-gradient-primary">runway</span>, own a path to
+                                    <span class="text-gradient-primary">profitability</span>. All in one integrated
+                                    model
+                                </h3>
+                                <div class="text scroll-animate">
+                                    <div class="subtext">
+                                        <h5>Sales Forecasting</h5>
+                                        <p>Yearly sales outlook across bear, base, and bull scenarios</p>
+                                    </div>
+                                    <div class="subtext">
+                                        <h5>Runway & Fundraising Needs</h5>
+                                        <p>Visualize performance trends across multiple revenue verticals</p>
+                                    </div>
+                                    <div class="subtext">
+                                        <h5>P&L & Cash Flow Outlook</h5>
+                                        <p>Internalize your business forecast with high-level, automated visuals on
+                                            profitability and cash flow
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="card-top">
+                                <h4>Use-of-funds Planning</h4>
+                            </div>
+                            <div class="card-cont">
+                                <h3>Bring your <span class="text-gradient-primary">spending
+                                        strategy</span> to life</h3>
+                                <div class="text">
+                                    <div class="subtext">
+                                        <h5>
+                                            Seamlessly visualize your spending timeline, allocation breakdown, and spend
+                                            roadmap to align internally and externally on your use-of-funds plan
+                                        </h5>
+                                        <ul>
+                                            <li>Spending Timeline</li>
+                                            <li>Allocation Breakdown</li>
+                                            <li>Spend Roadmap</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="card-top">
+                                <h4>General reporting</h4>
+                            </div>
+                            <div class="card-cont">
+                                <h3>
+                                    Tailored reporting to <span class="text-gradient-primary">build</span> a sustainable
+                                    tomorrow
+                                </h3>
+                                <div class="text">
+                                    <div class="subtext">
+                                        <ul>
+                                            <li>Master Financial Files (P&L, Balance Sheet, Cash Flow)</li>
+                                            <li>Burn Breakdown</li>
+                                            <li>Unit-Economics Analysis</li>
+                                            <li>Customer Cohort Analysis</li>
+                                        </ul>
+                                        <div class="extra">
+                                            <p class="gp">*Projects billed hourly</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- END MOBILE -->
             </div>
-
         </section>
 
+        <!-- ==================== CLIENTS ==================== -->
         <section id="clients" class="bg-white pt-5 pb-2 text-center">
-
-            <div class="content">
+            <div class="content scroll-animate">
                 <h3 class="scroll-animate">Our Clients</h3>
             </div>
             <div class="container">
-
                 <div class="raised">
-                    <h4 scroll-animate>Raised From</h4>
-                    <ul>
-                        <li><img src="assets/img/clients/raised/rebel.png" alt="" style="max-width: 70px"
-                                class="scroll-animate"></li>
-                        <li><img src="assets/img/clients/raised/y.png" alt="" style="max-width: 42px;"
-                                class="scroll-animate"></li>
-                        <li><img src="assets/img/clients/raised/defy.png" alt="" style="max-width: 70px"
-                                class="scroll-animate"></li>
-                        <li><img src="assets/img/clients/raised/bam.png" alt="" style="max-height: 20px;"
-                                class="scroll-animate"></li>
-                        <li><img src="assets/img/clients/raised/lux.png" alt="" style="max-width: 58px;"
-                                class="scroll-animate"></li>
-                        <li><img src="assets/img/clients/raised/10vc.png" alt="" style="max-width: 65px;"
-                                class="scroll-animate"></li>
-                        <li><img src="assets/img/clients/raised/sevensevensix.png" alt="" style="max-width: 60px;"
-                                class="scroll-animate"></li>
+                    <h4 class="scroll-animate">Raised From</h4>
+                    <!-- DESKTOP -->
+                    <ul class="mob-no">
+                        <li><a href="https://www.rebelfund.vc/" target="_blank"><img
+                                    src="assets/img/clients/raised/rebel.png" alt="" style="max-width: 70px"
+                                    class="scroll-animate"></li></a>
+                        <li><a href="https://www.ycombinator.com/" target="_blank"><img
+                                    src="assets/img/clients/raised/y.png" alt="" style="max-width: 42px;"
+                                    class="scroll-animate"></li></a>
+                        <li><a href="https://defy.vc/" target="_blank"><img src="assets/img/clients/raised/defy.png"
+                                    alt="" style="max-width: 70px" class="scroll-animate"></li></a>
+                        <li><a href="https://www.bam.vc/" target="_blank"><img src="assets/img/clients/raised/bam.png"
+                                    alt="" style="max-height: 20px;" class="scroll-animate"></li></a>
+                        <li><a href="https://www.luxcapital.com/" target="_blank"><img
+                                    src="assets/img/clients/raised/lux.png" alt="" style="max-width: 58px;"
+                                    class="scroll-animate"></li></a>
+                        <li><a href="https://10vc.com/" target="_blank"><img src="assets/img/clients/raised/10vc.png"
+                                    alt="" style="max-width: 65px;" class="scroll-animate"></li></a>
+                        <li><a href="https://sevensevensix.com/" target="_blank"><img
+                                    src="assets/img/clients/raised/sevensevensix.png" alt="" style="max-width: 60px;"
+                                    class="scroll-animate"></li></a>
                     </ul>
+                    <!-- SWIPER MOBILE -->
+                    <div class="swiper mySwiperClients mob-ok">
+                        <div class="swiper-wrapper scroll-animate">
+                            <div class="swiper-slide">
+                                <a href="https://www.rebelfund.vc/" target="_blank">
+                                    <img src="assets/img/clients/raised/rebel.png" alt="" style="max-width: 70px"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.ycombinator.com/" target="_blank">
+                                    <img src="assets/img/clients/raised/y.png" alt="" style="max-width: 42px;"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://defy.vc/" target="_blank">
+                                    <img src="assets/img/clients/raised/defy.png" alt="" style="max-width: 70px"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.bam.vc/" target="_blank">
+                                    <img src="assets/img/clients/raised/bam.png" alt="" style="max-height: 20px;"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.luxcapital.com/" target="_blank">
+                                    <img src="assets/img/clients/raised/lux.png" alt="" style="max-width: 58px;"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://10vc.com/" target="_blank">
+                                    <img src="assets/img/clients/raised/10vc.png" alt="" style="max-width: 65px;"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://sevensevensix.com/" target="_blank">
+                                    <img src="assets/img/clients/raised/sevensevensix.png" alt=""
+                                        style="max-width: 60px;"></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="industries">
                     <h4 class="scroll-animate">Industries</h4>
                     <ul>
                         <li class="scroll-animate">
-                            <img src="assets/img/clients/industries/hospitality.svg" alt="">
+                            <div class="img-content">
+                                <img src="assets/img/clients/industries/hospitality.svg" alt="">
+                            </div>
                             <p>Hospitality</p>
                         </li>
                         <li class="scroll-animate">
-                            <img src="assets/img/clients/industries/law.svg" alt="">
+                            <div class="img-content">
+                                <img src="assets/img/clients/industries/law.svg" alt="">
+                            </div>
                             <p>Law</p>
                         </li>
                         <li class="scroll-animate">
-                            <img src="assets/img/clients/industries/fintech.svg" alt="">
+                            <div class="img-content">
+                                <img src="assets/img/clients/industries/fintech.svg" alt="">
+                            </div>
                             <p>Fintech</p>
                         </li>
                         <li class="scroll-animate">
-                            <img src="assets/img/clients/industries/real-estate.svg" alt="">
+                            <div class="img-content">
+                                <img src="assets/img/clients/industries/real-estate.svg" alt="">
+                            </div>
                             <p>Real Estate</p>
                         </li>
                         <li class="scroll-animate">
-                            <img src="assets/img/clients/industries/biotech.svg" alt="">
+                            <div class="img-content">
+                                <img src="assets/img/clients/industries/biotech.svg" alt="">
+                            </div>
                             <p>Biotech</p>
                         </li>
                         <li class="scroll-animate">
-                            <img src="assets/img/clients/industries/healthcare.svg" alt="">
+                            <div class="img-content">
+                                <img src="assets/img/clients/industries/healthcare.svg" alt="">
+                            </div>
                             <p>Healthcare</p>
                         </li>
                         <li class="scroll-animate">
-                            <img src="assets/img/clients/industries/f&b.svg" alt="">
+                            <div class="img-content">
+                                <img src="assets/img/clients/industries/f&b.svg" alt="">
+                            </div>
                             <p>Food & Bev.</p>
                         </li>
                         <li class="scroll-animate">
-                            <img src="assets/img/clients/industries/others.svg" alt="">
+                            <div class="img-content">
+                                <img src="assets/img/clients/industries/others.svg" alt="">
+                            </div>
                             <p>Others</p>
                         </li>
                     </ul>
@@ -416,81 +628,96 @@
                         <li class="scroll-animate">Series A</li>
                     </ul>
                 </div>
-
             </div>
         </section>
 
+        <!-- ==================== CONTACT ==================== -->
         <section id="contact" class="bg-grad pt-5 pb-1 text-center">
             <div class="content">
                 <h3 class="color-white scroll-animate">Contact</h3>
                 <p class="d-lg-block subtitle color-white scroll-animate">
                     Put your finances on auto-pilot. Lets align on integrating our current financial toolkit, and/or
-                    building out models specific to your business</p>
+                    building out models specific to your business
+                </p>
                 <div class="buttons grad scroll-animate">
-                    <a href="https://calendly.com/kemitzisconsulting" target="_blank"
-                        class="btn btn-lg flex-shrink-0 book scroll-animate">
-                        Book a Call</a>
-                    <a href="mailto:tristan@kemitzisconsulting.com"
-                        class="btn btn-lg flex-shrink-0 book scroll-animate">
-                        Email</a>
+                    <a href="https://calendly.com/kemitzisconsulting/15min?back=1&month=2024-12" target="_blank"
+                        class="btn btn-lg flex-shrink-0 book">
+                        Book a Call
+                    </a>
+                    <a href="#" id="copyButton" class="btn btn-lg flex-shrink-0 book">
+                        <span id="textToCopy">tristan@kemitzisconsulting.com</span>
+                        <img src="assets/img/copy.svg" />
+                    </a>
+                    <p id="confirmationMessage">Email copied!</p>
                 </div>
             </div>
-            <div class="logo-end scroll-animate">
+            <div class="logo-end scroll-animate scroll-animate">
                 <img src="assets/img/logo-w.png" alt="">
             </div>
+            <div class="contact-bg scroll-animate"></div>
         </section>
 
-        <div id="process" class="modal fade scroll-animate" tabindex="-1" role="dialog">
+        <!-- ==================== MODAL ==================== -->
+        <div class="modal fade" id="process" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
-                    <h3 class="scroll-animate">The Process</h3>
-                    <div class="line-container scroll-animate">
-                        <div class="line-content scroll-animate">
-                            <img src="assets/img/line-gradient.svg" alt="">
-                        </div>
+                    <div class="modal-header">
+                        <h3 class="scroll-animate">The Process</h3>
+                        <button type="button" class="btn-close scroll-animate" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
                     </div>
-                    <div class="boxes">
-
-                        <div class="box">
-                            <div class="top scroll-animate">
-                                <p>Initial Setup</p>
-                                <p>(weeks 1-2)</p>
-                                <div class="num"><span>1</span></div>
-                            </div>
-                            <div class="slide-box scroll-animate">
-                                <ul class="slider-list">
-                                    <li>Connect accounts for data retrieval (Quickbooks, Stripe, Bank, etc.)</li>
-                                    <li>Upload and organize historical financial information</li>
-                                    <li>Generate current investor update model for review</li>
-                                </ul>
+                    <div class="modal-body">
+                        <div class="line-container scroll-animate">
+                            <div class="line-content">
+                                <img src="assets/img/line-gradient.svg" alt="">
                             </div>
                         </div>
+                        <div class="boxes">
 
-                        <div class="box">
-                            <div class="top scroll-animate">
-                                <p>Maintenance</p>
-                                <p>(monthly)</p>
-                                <div class="num"><span>2</span></div>
+                            <div class="box scroll-animate">
+                                <div class="top scroll-animate">
+                                    <p>Initial Setup</p>
+                                    <p>(weeks 1-2)</p>
+                                    <div class="num"><span>1</span></div>
+                                </div>
+                                <div class="slide-box scroll-animate">
+                                    <ul class="slider-list">
+                                        <li>Connect accounts for data retrieval (Quickbooks, Stripe, Bank, etc.)</li>
+                                        <li>Upload and organize historical financial information</li>
+                                        <li>Generate current investor update model for review</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="slide-box scroll-animate">
-                                <ul class="slider-list">
-                                    <li>Upload and integrate monthly financial data</li>
-                                    <li>Finalize investor update model within first 7 days of each month</li>
-                                </ul>
+
+                            <div class="box scroll-animate">
+                                <div class="top scroll-animate">
+                                    <p>Maintenance</p>
+                                    <p>(monthly)</p>
+                                    <div class="num"><span>2</span></div>
+                                </div>
+                                <div class="slide-box scroll-animate">
+                                    <ul class="slider-list">
+                                        <li>Upload and integrate monthly financial data</li>
+                                        <li>Finalize investor update model within first 7 days of each month</li>
+                                    </ul>
+                                </div>
                             </div>
+
                         </div>
-
                     </div>
-                    <div class="btn-container">
-                        <a href="https://calendly.com/kemitzisconsulting" target="_blank"
-                            class="btn btn-lg flex-shrink-0 book long scroll-animate">
-                            Book a Call</a>
+                    <div class="modal-footer">
+                        <div class="btn-container scroll-animate">
+                            <a href="https://calendly.com/kemitzisconsulting/15min?back=1&month=2024-12" target="_blank"
+                                class="btn btn-lg flex-shrink-0 book long">
+                                Book a Call
+                            </a>
+                        </div>
                     </div>
-
                 </div>
             </div>
         </div>
 
+        <!-- ==================== SCRIPTS ==================== -->
         <script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
         <script src="assets/vendor/@lottiefiles/lottie-player/dist/lottie-player.js"></script>
         <script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
@@ -502,8 +729,72 @@
         <script src="assets/js/header.js"></script>
         <script src="assets/js/smooth-scroll.js"></script>
         <script src="assets/js/swiper.js"></script>
+        <script src="assets/js/copy.js"></script>
 
-    </main>
+        <script>
+            function setFromAbout() {
+                sessionStorage.setItem('fromAbout', 'true');
+                closeNav();
+            }
+        </script>
+
+        <script>
+            function openNav() {
+                document.querySelector("#navbarNav").classList.add("active");
+            }
+            function closeNav() {
+                document.querySelector("#navbarNav").classList.remove("active");
+            }
+        </script>
+
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const sliderContainers = ['#swiperServicesMob', '#swiperToolsMob'];
+
+                function debounce(func, wait) {
+                    let timeout;
+                    return function (...args) {
+                        const context = this;
+                        clearTimeout(timeout);
+                        timeout = setTimeout(() => func.apply(context, args), wait);
+                    };
+                }
+
+                function checkViewportAndHandleHeight() {
+                    if (window.innerWidth < 999) {
+                        sliderContainers.forEach(containerSelector => {
+                            const swiperWrapper = document.querySelector(`${containerSelector} .swiper-wrapper`);
+                            if (swiperWrapper) {
+                                const altura = swiperWrapper.offsetHeight;
+                                console.log(`Altura de ${containerSelector} .swiper-wrapper:`, altura);
+
+                                const swiperSlides = swiperWrapper.querySelectorAll('.swiper-slide');
+                                swiperSlides.forEach(slide => {
+                                    slide.style.height = `${altura}px`;
+                                });
+                            } else {
+                                console.log(`El elemento ${containerSelector} .swiper-wrapper no se encontró.`);
+                            }
+                        });
+                    } else {
+                        console.log('Viewport mayor o igual a 999px. No se define la variable.');
+
+                        sliderContainers.forEach(containerSelector => {
+                            const swiperSlides = document.querySelectorAll(`${containerSelector} .swiper-wrapper .swiper-slide`);
+                            swiperSlides.forEach(slide => {
+                                slide.style.height = '';
+                            });
+                        });
+                    }
+                }
+
+                checkViewportAndHandleHeight();
+
+                window.addEventListener('resize', debounce(checkViewportAndHandleHeight, 200));
+            });
+        </script>
+
 </body>
 
 </html>

@@ -1,24 +1,72 @@
-// assets/js/swiper.js
+// Función genérica para manejar visibilidad con animaciones
+function toggleVisibility (element, condition) {
+  if (condition) {
+    if (!element.classList.contains ('visible')) {
+      element.classList.remove ('fade-out');
+      element.classList.add ('visible');
+    }
+  } else {
+    if (element.classList.contains ('visible')) {
+      element.classList.add ('fade-out');
+      element.classList.remove ('visible');
+      element.addEventListener ('animationend', function handler () {
+        element.style.zIndex = '1';
+        element.classList.remove ('fade-out');
+        element.removeEventListener ('animationend', handler);
+      });
+    }
+  }
+}
+
+// Función para manejar visibilidad de .gp-img y .pricing
+function handleVisibility (swiper, containerSelector) {
+  const totalSlides = swiper.slides.length;
+  const activeIndex = swiper.activeIndex;
+
+  const gpImg = document.querySelector (containerSelector + ' .gp-img');
+  const pricing = document.querySelector (containerSelector + ' .pricing');
+
+  if (gpImg) toggleVisibility (gpImg, activeIndex === totalSlides - 1);
+  if (pricing && containerSelector === '#services')
+    toggleVisibility (pricing, activeIndex === 0);
+}
+
+// Función para establecer altura igual en todos los slides (solo en responsive)
+function setEqualHeight (swiper) {
+  if (window.innerWidth <= 999) {
+    let maxHeight = 0;
+    swiper.slides.forEach (slide => {
+      slide.style.height = 'auto'; // Reiniciar altura para recalcular
+      const slideHeight = slide.offsetHeight;
+      if (slideHeight > maxHeight) maxHeight = slideHeight;
+    });
+
+    swiper.slides.forEach (slide => {
+      slide.style.height = `${maxHeight}px`; // Aplicar la altura máxima
+    });
+  } else {
+    swiper.slides.forEach (slide => {
+      slide.style.height = ''; // Restaurar comportamiento original en desktop
+    });
+  }
+}
 
 // Función para inicializar Swiper en una sección específica
 function initializeSwipers (containerSelector) {
-  // Inicializar el swiper principal
-  var swiper = new Swiper (containerSelector + ' .mySwiper', {
+  const swiper = new Swiper (containerSelector + ' .mySwiper', {
     pagination: {
       el: containerSelector + ' .swiper-pagination',
       clickable: true,
-      renderBullet: function (index, className) {
-        return '<span class="' + className + '">' + (index + 1) + '</span>';
-      },
+      renderBullet: (index, className) =>
+        `<span class="${className}">${index + 1}</span>`,
     },
-    autoHeight: true,
+    autoHeight: window.innerWidth > 999, // Solo activar autoHeight en desktop
     observer: true,
     observeParents: true,
     speed: 500,
   });
 
-  // Inicializar el swiper anidado (si existe)
-  var nestedSwiper = new Swiper (containerSelector + ' .nestedSwiper', {
+  const nestedSwiper = new Swiper (containerSelector + ' .nestedSwiper', {
     navigation: {
       nextEl: containerSelector + ' .swipper-button-next',
       prevEl: containerSelector + ' .swipper-button-prev',
@@ -29,196 +77,98 @@ function initializeSwipers (containerSelector) {
     speed: 500,
   });
 
-  // Actualiza el tamaño del swiper principal cuando cambie el slide interno
-  nestedSwiper.on ('slideChange', function () {
+  nestedSwiper.on ('slideChange', () => {
     swiper.updateAutoHeight ();
     swiper.update ();
   });
 
-  // Seleccionar todos los enlaces para cambiar de slide
-  var links = document.querySelectorAll (containerSelector + ' .go-to-slide');
-  var highlight = document.querySelector (containerSelector + ' .highlight');
+  const links = document.querySelectorAll (containerSelector + ' .go-to-slide');
+  const highlight = document.querySelector (containerSelector + ' .highlight');
 
-  // Función para actualizar el enlace activo y la posición del highlight
   function updateActiveLink () {
-    var currentIndex = swiper.activeIndex;
-    links.forEach (function (link) {
-      link.classList.remove ('active');
-    });
+    const currentIndex = swiper.activeIndex;
+    links.forEach (link => link.classList.remove ('active'));
 
-    var currentLink = document.querySelector (
-      containerSelector +
-        ' .go-to-slide[data-slide="' +
-        (currentIndex + 1) +
-        '"]'
+    const currentLink = document.querySelector (
+      `${containerSelector} .go-to-slide[data-slide="${currentIndex + 1}"]`
     );
+
     if (currentLink) {
       currentLink.classList.add ('active');
       moveHighlight (currentLink);
     }
 
-    // Llamar a la función para manejar la visibilidad de .gp-img y .pricing
     handleVisibility (swiper, containerSelector);
   }
 
-  // Función para mover el highlight debajo del enlace activo
   function moveHighlight (link) {
-    var linkRect = link.getBoundingClientRect ();
-    var containerRect = link.parentNode.getBoundingClientRect ();
+    const linkRect = link.getBoundingClientRect ();
+    const containerRect = link.parentNode.getBoundingClientRect ();
 
-    var leftPos = linkRect.left - containerRect.left;
-    var width = linkRect.width;
+    const leftPos = linkRect.left - containerRect.left;
+    const width = linkRect.width;
 
-    highlight.style.left = leftPos + 'px';
-    highlight.style.width = width + 'px';
+    highlight.style.left = `${leftPos}px`;
+    highlight.style.width = `${width}px`;
   }
 
-  // Agregar eventos de clic a los enlaces para cambiar de slide
-  links.forEach (function (link) {
-    link.addEventListener ('click', function (e) {
+  links.forEach (link => {
+    link.addEventListener ('click', e => {
       e.preventDefault ();
-      var slideIndex = parseInt (this.dataset.slide, 10) - 1;
+      const slideIndex = parseInt (link.dataset.slide, 10) - 1;
       swiper.slideTo (slideIndex);
     });
   });
 
-  // Escuchar el evento de cambio de slide en el swiper principal
-  swiper.on ('slideChange', function () {
-    updateActiveLink (); // Actualizar el enlace activo
+  swiper.on ('slideChange', () => {
+    updateActiveLink ();
 
-    // Espera 350ms antes de cambiar el ancho del contenedor
-    setTimeout (function () {
-      var container = document.querySelector (
+    setTimeout (() => {
+      const container = document.querySelector (
         containerSelector + ' .swiper-container'
       );
 
       if (containerSelector === '#tools') {
-        // Para la sección "tools" con 3 slides
-        if (swiper.activeIndex === 2) {
-          // Último slide
-          container.style.maxWidth = '760px';
-        } else {
-          container.style.maxWidth = '1150px';
-        }
+        container.style.maxWidth = swiper.activeIndex === 2
+          ? '760px'
+          : '1150px';
       } else {
-        // Para la sección "services" con 2 slides
-        if (swiper.activeIndex === 1) {
-          // Último slide
-          container.style.maxWidth = '760px';
-        } else {
-          container.style.maxWidth = '1150px';
-        }
+        container.style.maxWidth = swiper.activeIndex === 1
+          ? '760px'
+          : '1150px';
       }
 
-      // Actualizar el swiper después del cambio
       swiper.updateAutoHeight ();
       swiper.update ();
-    }, 350); // 350ms = 0.35s
+    }, 350);
   });
 
-  // Al iniciar, marcar el primer enlace como activo
+  // Ajustar altura igual al iniciar en responsive
+  setEqualHeight (swiper);
+
+  // Ajustar altura igual al redimensionar
+  window.addEventListener ('resize', () => {
+    setEqualHeight (swiper);
+  });
+
   updateActiveLink ();
 }
 
-// Función para manejar la visibilidad de .gp-img y .pricing
-function handleVisibility (swiper, containerSelector) {
-  var totalSlides = swiper.slides.length;
-  var activeIndex = swiper.activeIndex;
-
-  // Manejo de .gp-img
-  var gpImg = document.querySelector (containerSelector + ' .gp-img');
-  if (gpImg) {
-    // Verificar que gpImg existe
-    var isLastSlide = activeIndex === totalSlides - 1;
-    console.log (
-      `Container: ${containerSelector}, gpImg isLastSlide: ${isLastSlide}`
-    );
-
-    if (isLastSlide) {
-      // Si ya está visible, no hacemos nada
-      if (!gpImg.classList.contains ('visible')) {
-        // Remover la clase 'fade-out' si está presente
-        gpImg.classList.remove ('fade-out');
-        // Añadir la clase 'visible'
-        gpImg.classList.add ('visible');
-        console.log ('.gp-img visible');
-      }
-    } else {
-      // Si actualmente está visible, iniciamos la animación de fade-out
-      if (gpImg.classList.contains ('visible')) {
-        // Añadir la clase 'fade-out' para iniciar la animación
-        gpImg.classList.add ('fade-out');
-        // Remover la clase 'visible' para ocultar la imagen
-        gpImg.classList.remove ('visible');
-        console.log ('.gp-img fade-out');
-
-        // Escuchar el evento de finalización de la animación para cambiar z-index
-        gpImg.addEventListener ('animationend', function handler () {
-          // Establecer z-index a 1 después de la animación de fade-out
-          gpImg.style.zIndex = '1';
-          // Remover la clase 'fade-out' ya que la animación ha finalizado
-          gpImg.classList.remove ('fade-out');
-          // Remover el listener para evitar múltiples ejecuciones
-          gpImg.removeEventListener ('animationend', handler);
-        });
-      }
-    }
-  }
-
-  // Manejo de .pricing solo para la sección "services"
-  if (containerSelector === '#services') {
-    var pricing = document.querySelector (containerSelector + ' .pricing');
-    if (pricing) {
-      // Verificar que pricing existe
-      var isFirstSlide = activeIndex === 0; // Primer slide es index 0
-      console.log (
-        `Container: ${containerSelector}, pricing isFirstSlide: ${isFirstSlide}`
-      );
-
-      if (isFirstSlide) {
-        // Si ya está visible, no hacemos nada
-        if (!pricing.classList.contains ('visible')) {
-          // Remover la clase 'fade-out' si está presente
-          pricing.classList.remove ('fade-out');
-          // Añadir la clase 'visible'
-          pricing.classList.add ('visible');
-          console.log ('.pricing visible');
-        }
-      } else {
-        // Si actualmente está visible, iniciamos la animación de fade-out
-        if (pricing.classList.contains ('visible')) {
-          // Añadir la clase 'fade-out' para iniciar la animación
-          pricing.classList.add ('fade-out');
-          // Remover la clase 'visible' para ocultar el elemento
-          pricing.classList.remove ('visible');
-          console.log ('.pricing fade-out');
-
-          // Escuchar el evento de finalización de la animación para cambiar z-index
-          pricing.addEventListener ('animationend', function handler () {
-            // Establecer z-index a 1 después de la animación de fade-out
-            pricing.style.zIndex = '1';
-            // Remover la clase 'fade-out' ya que la animación ha finalizado
-            pricing.classList.remove ('fade-out');
-            // Remover el listener para evitar múltiples ejecuciones
-            pricing.removeEventListener ('animationend', handler);
-          });
-        }
-      }
-    }
-  }
-}
-
-// Inicializar Swipers para ambas secciones una vez que el DOM esté cargado
-document.addEventListener ('DOMContentLoaded', function () {
+// Inicializar Swipers cuando el DOM esté cargado
+document.addEventListener ('DOMContentLoaded', () => {
   initializeSwipers ('#services');
   initializeSwipers ('#tools');
 });
 
-// Funciones para abrir y cerrar el menú de navegación
-function openNav () {
-  document.querySelector ('#menu').classList.add ('active');
-}
+// Swiper para Mobile
+const swiperMobile = new Swiper ('.mySwiperMob', {
+  slidesPerView: 'auto',
+  centeredSlides: true,
+  spaceBetween: 20,
+});
 
-function closeNav () {
-  document.querySelector ('#menu').classList.remove ('active');
-}
+// Swiper para Clients
+const swiperClients = new Swiper ('.mySwiperClients', {
+  slidesPerView: 3,
+  freeMode: true,
+});

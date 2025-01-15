@@ -3,13 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Kemitzis Consulting</title>
+    <title>Kemitzis Consulting :: About</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="../assets/js/theme-switcher.js"></script>
     <link rel="shortcut icon" href="../assets/img/favicon.png">
-    <meta name="msapplication-TileColor" content="#080032">
-    <meta name="msapplication-config" content="../assets/favicon/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" media="screen" href="../assets/vendor/boxicons/css/boxicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" media="screen" href="../assets/vendor/lightgallery/css/lightgallery-bundle.min.css">
@@ -21,10 +17,11 @@
     <script src="../assets/js/preloader.js"></script>
 </head>
 
-<body>
+<body id="about-page">
 
     <div class="page-loading active">
         <div class="page-loading-inner">
+            <img src="../assets/img/favicon.png" alt="">
             <div class="page-spinner"></div><span>Loading...</span>
         </div>
     </div>
@@ -32,39 +29,18 @@
     <main class="page-wrapper">
         <header class="header navbar navbar-expand-lg position-absolute navbar-dark navbar-sticky navbar-stuck">
             <div class="container px-3">
-
-                <!-- <div id="menu">
-                    <div class="offcanvas-header border-bottom">
-                        <a href="javascript:void(0)" class="btn-close" onclick="closeNav()"></a>
-                    </div>
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a href="../#services" class="nav-link scroll-link" onclick="closeNav()">Services</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../#clients" class="nav-link scroll-link" onclick="closeNav()">Clients</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../#contact" class="nav-link scroll-link" onclick="closeNav()">Contact</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link" onclick="closeNav()"
-                                    style="pointer-events: none;">About</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="offcanvas-header border-top">
-                        <a href="../" class="nav-link scroll-link" onclick="closeNav()"><img
-                                src="../assets/img/logo.png" alt=""></a>
-                    </div>
-                </div> -->
-                <button type="button" class="navbar-toggler scroll-animate" onclick="openNav()">
+                <button type="button" class="navbar-toggler" onclick="openNav()">
                     <span class="navbar-toggler-icon">
-                        <img src="../assets/img/menu.svg" alt=""></span>
+                        <img src="../assets/img/menu.svg" alt="">
+                    </span>
                 </button>
 
                 <div id="navbarNav" class="offcanvas offcanvas-end scroll-animate">
+                    <div class="offcanvas-header mob-ok">
+                        <button type="button" class="btn-close" onclick="closeNav()">
+                            <img src="../assets/img/close.svg" alt="">
+                        </button>
+                    </div>
                     <div class="offcanvas-body">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
@@ -77,10 +53,13 @@
                                 <a href="../#contact" class="nav-link">Contact</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" style="pointer-events: none; color: #fff;">About</a>
+                                <a href="#about" class="nav-link color-white none">About</a>
                             </li>
-                            <span class="nav-highlight show" style="left: 451.836px; width: 92.6875px;"></span>
+                            <span class="nav-highlight mob-no"></span>
                         </ul>
+                    </div>
+                    <div class="offcanvas-footer mob-ok">
+                        <img src="../assets/img/menu-img.png" alt="">
                     </div>
                 </div>
             </div>
@@ -89,11 +68,12 @@
         <div class="logo-container scroll-animate">
             <div class="navbar-brand p-0">
                 <a href="../"><img id="logo" src="../assets/img/logo.png" width="92" alt="Kemitzis"></a>
-                </a>
             </div>
         </div>
 
-        <section id="about" class="pt-5 pb-2 mt-3 mt-sm-4 mt-xl-5 text-center">
+        <!-- ==================== ABOUT ==================== -->
+
+        <section id="about">
             <div class="content">
 
                 <div class="profile">
@@ -128,10 +108,11 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="side-body">
                         <div>
                             <h2 class="scroll-animate">About</h2>
-                            <p class="scroll-animate">Hey! I’m Tristan Kemitzis, and I partner with early stage founders
+                            <p class="scroll-animate">I’m Tristan Kemitzis, and I partner with early stage founders
                                 to clarify and optimize their finances. Why? I believe in data-driven decisions. I ran
                                 FP&A at Eataly through Covid and an acquisition – key to our success were dynamic,
                                 scenario-based modeling frameworks to accelerate iterative and data-based decisions. No
@@ -157,7 +138,8 @@
                             <h5 class="scroll-animate">Kemitzis Consulting</h5>
                             <p class="scroll-animate">Continued growth at Eataly was tempting, but I was looking for a
                                 new challenge and had the risk appetite to take a shot on goal. So, I took it. Time and
-                                time again I see companies sitting on a wealth of data that lays idle I build tools that
+                                time again I see companies sitting on a wealth of data that lays idle → I build tools
+                                that
                                 harvest impact from this data, that turn this data into decisions. The fundraising
                                 climate is an immense challenge for the foreseeable future, but building a financial
                                 backbone to weather the storm doesn't have to be. Whatever industry you may be in, let’s
@@ -169,18 +151,27 @@
                     <h4 class="scroll-animate">My Journey at Eataly</h4>
                     <div class="journey scroll-animate">
                         <div class="card scroll-animate">
+                            <div class="about-badge mob-ok">
+                                <img src="../assets/img/eataly1.svg" alt="">
+                            </div>
                             <h1 class="scroll-animate">+82%</h1>
                             <h3 class="scroll-animate">Growth</h3>
                             <p class="scroll-animate">Driven across multi-hundred-million $$ grossing West Coast Region
                                 via maximization of revenue verticals and new concept & store rollouts.</p>
                         </div>
                         <div class="card scroll-animate">
+                            <div class="about-badge mob-ok">
+                                <img src="../assets/img/eataly2.svg" alt="">
+                            </div>
                             <h1 class="scroll-animate">+90%</h1>
                             <h3 class="scroll-animate">Flowthrough</h3>
                             <p class="scroll-animate">Generated for the region through strategic sales mix,
                                 unit-economic, headcount, productivity, and G&A optimizations.</p>
                         </div>
                         <div class="card scroll-animate">
+                            <div class="about-badge mob-ok">
+                                <img src="../assets/img/eataly3.svg" alt="">
+                            </div>
                             <h1 class="scroll-animate">10</h1>
                             <h3 class="scroll-animate">Person-team</h3>
                             <p class="scroll-animate">Built and led to spearhead strategic finance for the West Coast,
@@ -193,27 +184,33 @@
         </section>
         <div class="about-bg"></div>
 
-        <section id="contact" class="about bg-grad pt-5 pb-1 text-center">
+        <!-- ==================== CONTACT ==================== -->
+        <section id="contact" class="contact-section bg-grad pt-5 pb-1 text-center">
             <div class="content">
                 <h3 class="color-white scroll-animate">Contact</h3>
                 <p class="d-lg-block subtitle color-white scroll-animate">
                     Put your finances on auto-pilot. Lets align on integrating our current financial toolkit, and/or
-                    building out models specific to your business</p>
+                    building out models specific to your business
+                </p>
                 <div class="buttons grad scroll-animate">
-                    <a href="https://calendly.com/kemitzisconsulting" target="_blank"
-                        class="btn btn-lg flex-shrink-0 book scroll-animate">
-                        Book a Call</a>
-                    <a href="mailto:tristan@kemitzisconsulting.com"
-                        class="btn btn-lg flex-shrink-0 book scroll-animate">
-                        Email</a>
+                    <a href="https://calendly.com/kemitzisconsulting/15min?back=1&month=2024-12" target="_blank"
+                        class="btn btn-lg flex-shrink-0 book">
+                        Book a Call
+                    </a>
+                    <a href="#" id="copyButton" class="btn btn-lg flex-shrink-0 book">
+                        <span id="textToCopy">tristan@kemitzisconsulting.com</span>
+                        <img src="../assets/img/copy.svg" />
+                    </a>
+                    <p id="confirmationMessage">Email copied!</p>
                 </div>
             </div>
-            <div class="logo-end scroll-animate">
+            <div class="logo-end scroll-animate scroll-animate">
                 <img src="../assets/img/logo-w.png" alt="">
             </div>
+            <div class="contact-bg scroll-animate"></div>
         </section>
 
-
+        <!-- ==================== SCRIPTS ==================== -->
         <script src="../assets/vendor/jarallax/dist/jarallax.min.js"></script>
         <script src="../assets/vendor/@lottiefiles/lottie-player/dist/lottie-player.js"></script>
         <script src="../assets/vendor/lightgallery/lightgallery.min.js"></script>
@@ -225,6 +222,23 @@
         <script src="../assets/js/header.js"></script>
         <script src="../assets/js/smooth-scroll.js"></script>
         <script src="../assets/js/swiper.js"></script>
+        <script src="../assets/js/copy.js"></script>
+
+        <script>
+            function setFromAbout() {
+                sessionStorage.setItem('fromAbout', 'true');
+                closeNav();
+            }
+        </script>
+
+        <script>
+            function openNav() {
+                document.querySelector("#navbarNav").classList.add("active");
+            }
+            function closeNav() {
+                document.querySelector("#navbarNav").classList.remove("active");
+            }
+        </script>
 
     </main>
 </body>
