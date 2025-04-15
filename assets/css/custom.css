@@ -1017,6 +1017,7 @@ h4.alt {
   flex-direction: column;
   justify-content: center;
   padding-left: 30px;
+  margin-top: 25px;
 }
 
 .modal-content .adhoc > h3 {
@@ -1275,7 +1276,6 @@ h4.alt {
   flex-direction: row;
   justify-content: space-between;
   gap: 20px;
-  margin-bottom: 25px;
 }
 
 .modal-content .boxes .box {
